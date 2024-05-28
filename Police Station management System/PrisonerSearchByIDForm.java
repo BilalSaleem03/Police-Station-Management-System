@@ -4,7 +4,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class PoliceSearchByIDForm extends JFrame
+public class PrisonerSearchByIDForm extends JFrame
 {
     JLabel searchId;
     JTextField searchIdText;
@@ -12,7 +12,7 @@ public class PoliceSearchByIDForm extends JFrame
     JButton back;
 
 
-    PoliceSearchByIDForm()
+    PrisonerSearchByIDForm()
     {
         setSize(500,200);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -42,14 +42,14 @@ public class PoliceSearchByIDForm extends JFrame
             {
                 int id = Integer.parseInt(searchIdText.getText());
                 
-                JOptionPane.showMessageDialog(null,Police.searchByID(id).toString());
+                JOptionPane.showMessageDialog(null,Prisoner.searchByID(id).toString());
                 dispose();
-                PoliceIntermediateForm pi = new PoliceIntermediateForm();
+                PrisonerIntermediateForm pi = new PrisonerIntermediateForm();
             }
             else if(ae.getActionCommand().equals("Back"))
             {
                 dispose();
-                PoliceIntermediateForm p1 = new PoliceIntermediateForm();
+                PrisonerIntermediateForm p1 = new PrisonerIntermediateForm();
             }
         }
     }

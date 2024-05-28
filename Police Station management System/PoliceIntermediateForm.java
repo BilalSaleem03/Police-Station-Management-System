@@ -75,8 +75,6 @@ public class PoliceIntermediateForm extends JFrame
             }
             else if(ae.getActionCommand().equals("Delete"))
             {
-                
-                JOptionPane.showMessageDialog(null,"aaaaa");
                 dispose();
                 PoliceDeleteForm a = new PoliceDeleteForm();
             }

@@ -7,6 +7,10 @@ public class runner {
         //PrisonerIntermediateForm p = new PrisonerIntermediateForm();
         //PoliceDeleteForm a = new PoliceDeleteForm();
         //PoliceSearchByIDForm ps = new PoliceSearchByIDForm();
+        //PrisonerUpdateForm p = new PrisonerUpdateForm();
+        // PrisonerDeleteForm p2 = new PrisonerDeleteForm();
+        // PrisonerSearchByIDForm p3 = new PrisonerSearchByIDForm();
         //PoliceUpdateForm p = new PoliceUpdateForm();
     }
 }
+// 

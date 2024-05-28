@@ -68,10 +68,10 @@ class Prisoner extends Person implements Serializable{
 		return lines;
 	}
 
-	public static void delete(String name) {
+	public static void delete(int ID) {
 		ArrayList<Prisoner> temp = readFromFile();
 		for(int i = 0; i < temp.size();i++) {
-			if(temp.get(i).name.equals(name)) {
+			if(temp.get(i).ID == ID) {
 				temp.remove(i);
 				break;
 			}
@@ -94,11 +94,11 @@ class Prisoner extends Person implements Serializable{
 	}
 
 
-	public static void update(String name, String changed) {
+	public static void update(int ID, int changed) {
 		ArrayList<Prisoner> temp = readFromFile();
 		for(int i = 0; i < temp.size();i++) {
-			if(temp.get(i).name.equals(name)) {
-				temp.get(i).name = changed;
+			if(temp.get(i).ID == ID) {
+				temp.get(i).cellNum = changed;
 				break;
 			}
 		}

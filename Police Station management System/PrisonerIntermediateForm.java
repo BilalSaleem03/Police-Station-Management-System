@@ -56,7 +56,7 @@ public class PrisonerIntermediateForm extends JFrame
             else if(ae.getActionCommand().equals("Search Prisoner"))
             {
                 dispose();
-                // Home h = new Home();
+                PrisonerSearchByIDForm h = new PrisonerSearchByIDForm();
             }
             else if(ae.getActionCommand().equals("Display All"))    //completed
             {
@@ -70,12 +70,12 @@ public class PrisonerIntermediateForm extends JFrame
             else if(ae.getActionCommand().equals("Update"))
             {
                 dispose();
-                // Home h = new Home();
+                PrisonerUpdateForm h = new PrisonerUpdateForm();
             }
             else if(ae.getActionCommand().equals("Delete"))
             {
                 dispose();
-                // Home h = new Home();
+                PrisonerDeleteForm h = new PrisonerDeleteForm();
             }
             else if(ae.getActionCommand().equals("Home"))
             {
