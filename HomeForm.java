@@ -18,7 +18,7 @@ public class HomeForm extends JFrame
         setLayout(new GridLayout(4,1));
 
         police = new JButton("Police");
-        prisoner = new JButton("prisoner");
+        prisoner = new JButton("Prisoner");
         vehicle = new JButton("Vehicle");
         exit = new JButton("Exit");
 
@@ -40,12 +40,11 @@ public class HomeForm extends JFrame
         {
             if(ae.getActionCommand().equals("Police"))
             {
-                
+                PoliceIntermediateForm pi = new PoliceIntermediateForm();
             }
             else if(ae.getActionCommand().equals("Prisoner"))
             {
-                dispose();
-                // Home h = new Home();
+                PrisonerIntermediateForm pi = new PrisonerIntermediateForm();
             }
             else if(ae.getActionCommand().equals("Vehicle"))
             {
@@ -55,7 +54,6 @@ public class HomeForm extends JFrame
             else
             {
                 System.exit(0);
-                //JOptionPane.showMessageDialog(null,"aaaaa");
             }
         }
     }

@@ -15,8 +15,8 @@ public class PrisonerForm extends JFrame
     JTextField genderText;
     JLabel crime;
     JTextField crimeText;
-    JLabel weapon;
-    JTextField weaponText;
+    JLabel tenure;
+    JTextField tenureText;
     JLabel cellNo;
     JTextField cellNoText;
 
@@ -39,8 +39,8 @@ public class PrisonerForm extends JFrame
         genderText = new JTextField(20);
         crime = new JLabel("Crime");
         crimeText = new JTextField(20);
-        weapon = new JLabel("Weapon");
-        weaponText = new JTextField(20);
+        tenure = new JLabel("Tenure");
+        tenureText = new JTextField(20);
         cellNo = new JLabel("Cell #");
         cellNoText = new JTextField(20);
         submit = new JButton("Submit");
@@ -58,8 +58,8 @@ public class PrisonerForm extends JFrame
         add(genderText);
         add(crime);
         add(crimeText);
-        add(weapon);
-        add(weaponText);
+        add(tenure);
+        add(tenureText);
         add(cellNo);
         add(cellNoText);
         add(submit);
@@ -67,7 +67,7 @@ public class PrisonerForm extends JFrame
         setVisible(true);
     } 
 
-    class MyActionListener implements ActionListener              //so that we canaccess all the data members of SimpleGUI class
+    class MyActionListener implements ActionListener         
     {
         public void actionPerformed(ActionEvent ae)
         {
@@ -76,17 +76,19 @@ public class PrisonerForm extends JFrame
                 int id = Integer.parseInt(idText.getText());
                 int age = Integer.parseInt(ageText.getText());
                 int cellNo = Integer.parseInt(cellNoText.getText());
-                // Patient p = new Patient(id , nameText.getText() , age , illnessText.getText());
-                // Patient.writeToFile(p);
+                Prisoner p = new Prisoner(nameText.getText(), age, genderText.getText(), id, crimeText.getText(), cellNoText.getText(), cellNo);
+                Prisoner.writeFile(p);
+                dispose();
+                PrisonerForm p1 = new PrisonerForm();
             }
             else if(ae.getActionCommand().equals("Home"))
             {
                 dispose();
-                // Home h = new Home();
+                HomeForm h = new HomeForm();
             }
             else
             {
-                //JOptionPane.showMessageDialog(null,"aaaaa");
+                
             }
         }
     }

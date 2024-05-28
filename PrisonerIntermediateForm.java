@@ -1,15 +1,14 @@
 
-    
-import java.util.*;
 import javax.swing.*;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
-public class PoliceIntermediateForm extends JFrame
+public class PrisonerIntermediateForm extends JFrame
 {
 
-    JButton addPolice;
+    JButton addPrisoner;
     JButton searchByID;
     JButton showAll;
     JButton updateInfo;
@@ -17,27 +16,27 @@ public class PoliceIntermediateForm extends JFrame
     JButton home;
 
 
-    PoliceIntermediateForm()
+    PrisonerIntermediateForm()
     {
         setSize(600,600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new GridLayout(6,1));
 
 
-        addPolice = new JButton("Add Police");
-        searchByID = new JButton("Search Police");
+        addPrisoner = new JButton("Add Prisoner");
+        searchByID = new JButton("Search Prisoner");
         showAll = new JButton("Display All");
         updateInfo = new JButton("Update");
         delete = new JButton("Delete");
         home = new JButton("Home");
         MyActionListener listener = new MyActionListener();
-        addPolice.addActionListener(listener);
+        addPrisoner.addActionListener(listener);
         searchByID.addActionListener(listener);
         showAll.addActionListener(listener);
         updateInfo.addActionListener(listener);
         delete.addActionListener(listener);
         home.addActionListener(listener);
-        add(addPolice);
+        add(addPrisoner);
         add(searchByID);
         add(showAll);
         add(updateInfo);
@@ -50,19 +49,19 @@ public class PoliceIntermediateForm extends JFrame
     {
         public void actionPerformed(ActionEvent ae)
         {
-            if(ae.getActionCommand().equals("Add Police"))   // completed
+            if(ae.getActionCommand().equals("Add Prisoner"))   // completed
             {
-                PoliceForm pf = new PoliceForm();
+                PrisonerForm pf = new PrisonerForm();
             }
-            else if(ae.getActionCommand().equals("Search Police"))
+            else if(ae.getActionCommand().equals("Search Prisoner"))
             {
                 dispose();
-                PoliceSearchByIDForm ps = new PoliceSearchByIDForm();
+                // Home h = new Home();
             }
             else if(ae.getActionCommand().equals("Display All"))    //completed
             {
                 //dispose();
-                ArrayList<Police> arr = Police.readFromFile();
+                ArrayList<Prisoner> arr = Prisoner.readFromFile();
                 for(int i = 0 ; i<arr.size(); i++)
                 {
                     JOptionPane.showMessageDialog(null, arr.get(i).toString());
@@ -71,14 +70,12 @@ public class PoliceIntermediateForm extends JFrame
             else if(ae.getActionCommand().equals("Update"))
             {
                 dispose();
-                PoliceUpdateForm pf = new PoliceUpdateForm();
+                // Home h = new Home();
             }
             else if(ae.getActionCommand().equals("Delete"))
             {
-                
-                JOptionPane.showMessageDialog(null,"aaaaa");
                 dispose();
-                PoliceDeleteForm a = new PoliceDeleteForm();
+                // Home h = new Home();
             }
             else if(ae.getActionCommand().equals("Home"))
             {
@@ -87,6 +84,7 @@ public class PoliceIntermediateForm extends JFrame
             }
             else
             {
+                //JOptionPane.showMessageDialog(null,"aaaaa");
             }
         }
     }

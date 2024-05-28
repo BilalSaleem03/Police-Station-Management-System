@@ -15,8 +15,8 @@ public class PoliceForm extends JFrame
     JTextField genderText;
     JLabel post;
     JTextField postText;
-    JLabel weapon;
-    JTextField weaponText;
+    JLabel weaponNo;
+    JTextField weaponNoText;
     JLabel cases;
     JTextField casesText;
     JLabel salary;
@@ -40,8 +40,8 @@ public class PoliceForm extends JFrame
         genderText = new JTextField(20);
         post = new JLabel("Post");
         postText = new JTextField(20);
-        weapon = new JLabel("Weapon");
-        weaponText = new JTextField(20);
+        weaponNo = new JLabel("Weapon");
+        weaponNoText = new JTextField(20);
         cases = new JLabel("Cases Assigned");
         casesText = new JTextField(20);
         salary = new JLabel("Salary");
@@ -61,8 +61,8 @@ public class PoliceForm extends JFrame
         add(genderText);
         add(post);
         add(postText);
-        add(weapon);
-        add(weaponText);
+        add(weaponNo);
+        add(weaponNoText);
         add(cases);
         add(casesText);
         add(salary);
@@ -72,7 +72,7 @@ public class PoliceForm extends JFrame
         setVisible(true);
     } 
 
-    class MyActionListener implements ActionListener              //so that we canaccess all the data members of SimpleGUI class
+    class MyActionListener implements ActionListener             
     {
         public void actionPerformed(ActionEvent ae)
         {
@@ -80,14 +80,18 @@ public class PoliceForm extends JFrame
             {
                 int id = Integer.parseInt(idText.getText());
                 int age = Integer.parseInt(ageText.getText());
+                int weapon2 = Integer.parseInt(weaponNoText.getText());
                 double salary = Double.parseDouble(salaryText.getText());
-                //Patient p = new Patient(id , nameText.getText() , age , genderText.getText() ,  postText.getText() , weaponText.getText() , casesText.getText() , salary);
-                // Patient.writeToFile(p);
+                Police p = new Police(nameText.getText(), age, genderText.getText(), id , postText.getText() , salary , weapon2, casesText.getText());
+                Police.writeFile(p);
+                dispose();
+                PoliceForm p1 = new PoliceForm();
             }
+
             else if(ae.getActionCommand().equals("Home"))
             {
                 dispose();
-                // Home h = new Home();
+                HomeForm h = new HomeForm();
             }
             else
             {
